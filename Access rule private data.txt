@@ -1,0 +1,34 @@
+Note:-It means for each private data member compiler create a public access method:-
+
+class Outer
+{
+private int i;
+
+class In
+{
+}
+
+}
+
+During compilation:-
+
+class Outer extends Object
+{
+private int i;
+private String s;
+
+public int access$000()
+{
+return i;
+}
+
+public String access$001()
+{
+return s;
+}
+
+class In
+{
+}
+
+}

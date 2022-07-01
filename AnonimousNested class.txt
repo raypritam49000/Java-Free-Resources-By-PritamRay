@@ -1,0 +1,26 @@
+AnonimousNested class have fallowing characterstics:-
+
+1.It is treated as  dataMember of a class or as local variabel.
+2.It does not have any name.
+3.It can not have static member.
+4.It can not be inheritate.
+5.It can inherite an other class or can Implements an interface.
+6.It is decleared and initilized in single line statement.
+7.only single object is created for anonymous calss;
+
+8.its object is created by jre only
+
+9.It must have a parent either a class or a interface.
+
+syntext:-
+
+Parent type refva=new Parrent()
+{
+
+body of anonymousclass
+
+};
+
+Prent type means class or interface.
+
+

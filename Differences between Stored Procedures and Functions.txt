@@ -1,0 +1,41 @@
+Differences between Stored Procedures and Functions
+ 
+Procedure can return zero or n values whereas function can return one value which is mandatory.
+
+Procedures can have input/output parameters for it whereas functions can have only input parameters.
+
+Procedure allows select as well as DML statement in it whereas function allows only select statement in it.
+
+Functions can be called from procedure whereas procedures cannot be called from function.
+
+Exception can be handled by try-catch block in a procedure whereas try-catch block cannot be used in a function.
+
+We can go for transaction management in procedure whereas we can't go in function.
+
+Procedures can not be utilized in a select statement whereas function can be embedded in a select statement.
+UDF can be used in the SQL statements anywhere in the WHERE/HAVING/SELECT section where as Stored procedures cannot be.
+
+UDFs that return tables can be treated as another rowset. This can be used in JOINs with other tables.
+Inline UDF's can be though of as views that take parameters and can be used in JOINs and other Rowset operations.
+
+
+
+
+
+
+
+
+
+tored Procedure
+
+A Stored Procedure is a program (or procedure) which is physically stored within a database. They are usually written in a proprietary database language like PL/SQL for Oracle database or PL/PgSQL for PostgreSQL. The advantage of a stored procedure is that when it is run, in response to a user request, it is run directly by the database engine, which usually runs on a separate database server. As such, it has direct access to the data it needs to manipulate and only needs to send its results back to the user, doing away with the overhead of communicating large amounts of data back and forth.
+
+User-defined Function
+
+A user-defined function is a routine that encapsulates useful logic for use in other queries. While views are limited to a single SELECT statement, user-defined functions can have multiple SELECT statements and provide more powerful logic than is possible with views.
+
+User defined functions have three main categories:
+
+Scalar-valued function - returns a scalar value such as an integer or a timestamp. Can be used as column name in queries.
+Inline function - can contain a single SELECT statement.
+Table-valued function - can contain any number of statements that populate the table variable to be returned. They become handy when you need to return a set of rows, but you can't enclose the logic for getting this rowset in a single SELECT statement.

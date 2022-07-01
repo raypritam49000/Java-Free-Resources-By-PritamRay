@@ -1,0 +1,19 @@
+Syntex to define procedure:-
+
+create or replace procedure procedureName(ParamNameType DataType,....)
+is 
+local variable declaration
+begin
+--logic--
+end;
+
+
+Syntex to define function:-
+
+create or replace function functionName(ParamNameType IN DataType,....)return datatype
+is 
+local variable declaration
+begin
+--logic--
+end;
+

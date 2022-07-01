@@ -1,0 +1,39 @@
+The API of Filter is Represented by fallowing Interfaces:-
+1.javax.servlet.Filter;
+2.javax.servlet.FilterConfig
+3.javax.servlet.FilterChain
+
+Filter interfece method:-
+
+1.public void init(FilterConfig con)
+2.public void doFilter(ServletRequest req,ServletResponse res,FilterChain chain)throws ServletException,IOException
+
+Logical Struture of doFilter:-
+
+--doFilter(-,-,-)
+{
+preprocessing logic
+forwarding Logic
+postprocessing logic
+
+}
+
+3.public void destroy()
+
+
+FilterChain interface:-This interface contains one method which is doFilter() which is use to forward the request to the Next filter in the Chain if any or to the intended request resource.
+
+public void doFilter(ServletRequest req,S.R res)
+
+FilterConfig:-
+This is used to read the filterSpecific initilization parameter that are passed form the web.xml.
+
+
+method:-
+1.public Sring getParameter(String name)
+2.public Enumeration getParameterNames()
+3.public ServletConfig getServletConfig()
+etc.
+
+
+

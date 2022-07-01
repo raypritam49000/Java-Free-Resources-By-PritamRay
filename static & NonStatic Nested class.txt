@@ -1,0 +1,78 @@
+static Nested class:-
+It has the fallowing feature:-
+
+1.It is treated as a static data member as a class.
+2.it can have both static and non static members.
+3.It can access only static member of its inclosing(outer) class.
+4.The object of this class can be created without creating its inclosing class object.
+5.It can be inherite Independently.
+6.It can also Inherite an other calss.
+7.It can also implements an interface.
+
+Note:-since it is treated as a static data member of a class so qualifies all those keyword that can be applied on a data member.
+
+
+
+Syntex to crate the object:-
+
+OuterclassName.nestedclassName referenceofNestedclass=new 
+outerclassName.nestedclassName(args if any)
+
+
+
+
+
+NonStaticNested class:-
+
+1.It is treted as a non-static data member of a class.
+
+2.It can have only non-static member.
+
+3.It can access all the members(static as well as non-static) of its inclosing class.
+
+4.The object of this class always created with the help of its inclosing class object.
+
+5.It can inherite other class.
+
+
+
+Syntex to create the object of Non-static class:-
+
+OuterClassName refofOuter=new OuterClassName(args if any);
+
+OuterClassName.InnerClassName refofInner=ref of Outer.new InnerClassName(args if any);
+
+
+
+
+
+
+
+
+
+Note:-In case of non-static nested class compiler make the fallowing changes in the source code.
+
+class Outer
+{ 
+class Inner
+{}
+}
+public static void main(String aa[])
+{
+Outer o=new Outer();
+Outer.Inner in=o.new Inner();
+}
+}
+
+During compilation:-
+
+class Outer$Inner extends java.lang.Object
+{
+    final Outer this$0;
+
+    Outer$Inner(Outer o)
+   {
+    this$0=0;    
+   }
+
+}

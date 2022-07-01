@@ -1,0 +1,10 @@
+Filter:-A filter is a component that sits b/w web-browser and a web component(servlet,jsp,html).
+And can be used to pre-processing the request as well as post processing the response.
+
+Need/Advantage:-
+Filter can be used to apply the common code that are need to multiple web component.In other words filter reduces the work load of web components as well as provides reusebility of common code.
+
+example:-Authentication,Logging etc.
+
+
+

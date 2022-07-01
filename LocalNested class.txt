@@ -1,0 +1,19 @@
+LocalNested class have fallowing characterstics:-
+
+1.It is treated as local variable.
+
+2.It can be define inside a method,cons, or block.
+
+3.It can have only non-static member.
+
+4.It can not be declear static because we can not have static local variable.
+
+5.The object of this class can not be created outside its inclosing class scope directly.
+
+6.The object of this class can not be create directly from outside its inclosing scope.
+
+7.It can implements interface. 
+
+Rule:-It can access only final variable of its inclosing scope.
+
+

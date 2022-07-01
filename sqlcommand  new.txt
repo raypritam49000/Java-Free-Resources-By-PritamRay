@@ -1,0 +1,285 @@
+DDL-create,alter,drop,rename,truncate;//auto commit
+DML-insert,update,delete,modifiy;
+DCL-grant,revoke;
+TCL-commit,rollback,savepoint;
+
+
+Qus-How can create a table from an other table
+ans-create table emp2 select * from epm2;
+
+Qus1-How to create a table-
+
+ans-create table emp56(name varchar2(20),id number(10));
+/
+
+Qus2-How to add a value in table-
+
+ans-insert into emp56 values('ram','45');
+/
+
+Qus3-add values multiple-
+
+ans-insert into emp56 values('&name',&age);
+the we to provide /
+/
+
+
+Qus4-how to fetch the data from database
+ans-select * from emp23;
+/
+
+
+Qus5-how to get description of database
+ans-desc emp23;
+/
+
+
+
+Qus6-for delete a table-
+ans-drop table emp12;
+/
+
+Qus-delete from emp12 where id=222;
+/
+
+Qus7-for update table-
+ans-update emp12 set id='111' where name='aaa';
+/
+
+
+
+
+
+
+Qus-0-How to create user
+ans-create user surya1 identified by surya1;
+/
+Qus-01-How to create grantprivalage-
+
+ans-grant create session,create table to surya;
+/
+
+Qus-02-How to create grantprivalage as admin-
+
+ans-grant dba to surya;
+/
+
+Qus-03-How to revoke the privalage from user as dba;
+ans-revoke dba from surya;
+/
+
+Qus-03-How to revoke the privalage from user as cretesession;
+ans-revoke create session,create table from pp;
+/
+
+Qus-How to provide the quota to users
+ans-alter user ram default tablespace users quota 10m on users;
+/
+qus-connect to sys dba
+ans-coon / as sysdba;
+
+qus-how to lock the uses;
+ans-alter user hr identified  by hr account lock;
+ 
+qus-how to unlock the uses;
+ans-alter user hr identified  by hr account unlock;
+/
+qus-how to connect;
+ans-conn hr/hr;
+
+qus-to show  all the object of hr;
+ans-select * from tab;
+
+ans-How to count the number of rows int the table;
+ans-select count(*) from employees;
+
+
+
+
+qus-if we want that all the data is then what we have to do;
+ans-set autocommit on then write the quary;
+
+qus-if data is insert and it is not save then we what we have t do;
+ans-commit;
+
+
+qus-if we want to loss the data;
+ans-rollback;
+
+Qus-How to login in sqlpluse from run...
+
+ans-sqlplusw / as sysdba
+
+truncate table emp21;
+/
+
+
+drop table student;
+
+create table student(id int primary key auto_increment, name varchar(30) not null, address varchar(50));
+
+alter table student add column (mobile varchar(15) unique);
+
+select * from subject;
+
+update student set mobile = '32444' where id= 4;
+
+
+
+insert into student (name,address,mobile) values
+('ravi','Bhiar','124423'),
+('ravi','Bhiar','124423');
+
+
+
+
+create table subject (sub_id int(10),subject_name varchar(30), foreign key (sub_id) references student(id));
+
+insert into subject values(sub_id,subject_name),
+(1,'Science'),
+(1,'English'),
+(2,'Math'),
+(3,'Hindi');
+
+select s.name,s.id,sb.subject_name from student s,subject sb
+where s.id= sb.sub_id ;
+
+select s.name,s.id,sb.subject_name from student s join subject sb
+where s.id= sb.sub_id ;
+
+
+
+
+SELECT COUNT(DISTINCT Country) FROM details;
+SELECT DISTINCT Country FROM details;
+SELECT Count * AS DistinctCountries FROM (SELECT DISTINCT Country FROM details);
+SELECT CustomerName, id, SALARY FROM details GROUP BY CustomerName;
+SELECT * FROM details WHERE NOT Country='Germany';
+SELECT id, CustomerName, ContactName, Address FROM Details WHERE Address IS NOT NULL;
+SELECT CustomerName, ContactName, Address FROM details WHERE Address IS NULL;
+
+UPDATE Details SET CustomerName = 'Alfred Schmidt', City= 'Frankfurt' WHERE ID = 11;
+
+SELECT MIN(Salary) AS LowestSalary FROM Details;
+SELECT MAX(Salary) AS LowestSalary FROM Details;
+SELECT COUNT(Salary) FROM Details;
+SELECT AVG(Salary) FROM Details;
+SELECT * FROM Details WHERE CustomerName LIKE 'a%';
+SELECT * FROM Details WHERE Country IN ('India', 'Germany', 'UK');
+SELECT * FROM Details WHERE Salary NOT BETWEEN 1000 AND 5000;
+SELECT ID AS CustomerID, CustomerName AS Name FROM Details;
+
+Create table Orders(OrderId int(10), ID varchar(40), OrderDate DATE NOT NULL);
+insert into Orders value(10308, 2 ,'2006-09-18');
+insert into Orders value(10309, 5 ,'1996-09-19');
+insert into Orders value(10310, 8 ,'1998-09-20');
+insert into Orders value(10311, 11 ,'2003-09-21');
+select * from orders;
+
+SELECT details.id, Orders.OrderID, Details.CustomerName, Orders.OrderDate FROM Orders
+INNER JOIN Details ON Orders.ID=Details.ID;
+
+SELECT Details.ID, Details.CustomerName, Orders.ID
+FROM Details LEFT JOIN Orders ON Details.ID = Orders.ID ORDER BY Details.id;
+
+SELECT Details.ID, Details.CustomerName, Orders.ID
+FROM Details LEFT JOIN Orders ON Details.ID = Orders.ID ORDER BY Details.CustomerName;
+
+SELECT Orders.ID, orders.orderdate FROM Orders RIGHT JOIN Details ON Orders.ID = Details.ID
+ORDER BY Orders.OrderID;
+
+/*SELECT * FROM Details FULL JOIN Orders ON details.id=orders.id; non supported*/
+select * from details;
+select * from orders;
+
+SELECT * FROM Details
+LEFT JOIN orders ON details.id = orders.id
+UNION ALL
+SELECT * FROM Details
+RIGHT JOIN orders ON details.id = orders.id;
+
+SELECT COUNT(ID), City FROM Details
+GROUP BY City
+HAVING COUNT(ID) <= 2;
+
+
+
+create table department (id int primary key auto_increment,name varchar (50),marks int (10),department_id int(10));
+
+insert into department (name,marks,department_id) values
+('Ali',78,100),
+('Zain',70,101),
+('Nasir',56,100),
+('Yasir',80,101),
+('Bilal',60,100),
+('Altamsh',80,100),
+('Danish',90,101),
+('Fahad',55,102),
+('Aliya',88,102),
+('Tahira',68,104),
+('Usama',55,104),
+('Wajiha',88,102);
+
+
+select * from department;
+
+
+
+
+select name,id,marks,department_id from department
+group by(department_id)
+having min(marks);
+
+select name,id,marks,department_id from department
+group by(department_id)
+having marks > 60 ;
+
+
+select * from department;
+
+alter table department add column (batch_id varchar(10)); /* for adding command /
+alter table department drop batch_id; /* for droping any coulmn /
+alter table department rename as department; /* for changing table name /
+
+
+update department set batch_id = 'TEL' where id=12; /* for updating /
+
+create table Example (id int (10),name varchar (50));
+drop table Example ;
+insert into Example(id,name) values
+(1,'A'),
+(2,'B'),
+(2,'C');
+
+select * from example;
+
+create table Account_info (account_no int (50) , name varchar(50), amount int(50) );
+
+insert into Account_info values(8,'pooja',2400);
+select * from Account_info;
+
+delete from Account_info where aacount_no = 6;
+
+commit;
+rollback to poojaMyprocedureMyprocedure;
+
+
+
+insert into Account_info values(4,'Arif',5000);
+savepoint preetam;
+
+insert into Account_info values(5,'pooja',50000);
+savepoint pooja;
+
+insert into Account_info values(6,'Danish',3000);
+savepoint Dansish;
+
+
+
+
+
+
+
+
+drop table Account_info;
+rollback to Zia;
